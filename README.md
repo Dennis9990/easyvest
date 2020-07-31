@@ -19,7 +19,7 @@ SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)
 ```
 -  Change messages. You can choose between ShowNotifications or a more simple chat msg.
 ```
-ShowNotification("You put on your vest.")  -- ShowNotification or msg("message")
+ShowNotification("You put on your vest.")
 ```
 - Change these values in the Animation section to whatever animation you want. Full animation list https://wiki.gtanet.work/index.php?title=Animations
 ```
