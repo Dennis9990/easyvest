@@ -87,5 +87,5 @@ function ShowNotification( text )
   end
   
   function msg(text)
-    TriggerEvent("chatMessage", "EasyVest", {255, 4, 1}, text) -- You can change "Armor" to whatever you want.
+    TriggerEvent("chatMessage", "EasyVest", {255, 4, 1}, text)
 end
