@@ -1,2 +1,1 @@
-# easyvest
-Simple /vest command
+Easy Vest
