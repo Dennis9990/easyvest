@@ -2,7 +2,7 @@
 
 ### What is this?
 A simple script that gives you a vest when executing the /vest command. It will remove the vest with /rvest.
-I've added an animation to make it look pretty :D. Choose between a servernotification or a more simple chat msg.
+I've added an animation to make it look pretty :D.
 
 ### Functions
 - /vest puts on a vest.
@@ -17,7 +17,7 @@ I've added an animation to make it look pretty :D. Choose between a servernotifi
 ```
 SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)
 ```
--  Change messages. You can choose between ShowNotifications or a more simple chat msg.
+-  Change messages. You can choose between server notifications or a more simple chat msg.
 ```
 ShowNotification("You put on your vest.")
 ```
@@ -26,4 +26,8 @@ ShowNotification("You put on your vest.")
 --AnimDict = anim@narcotics@trash
 --AnimName = drop_front
 ```
-
+### To Do
+- Possibility to add multiple vests.
+- 1 command to add/remove vest instead of 2 seperate.
+- Command usage Cooldown
+- Add hats, glasses and masks
