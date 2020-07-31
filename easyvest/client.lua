@@ -28,7 +28,6 @@ AddEventHandler('rvest', function()
 	Wait(1000)
     local ped = GetPlayerPed(PlayerId())
     SetPedComponentVariation(GetPlayerPed(-1), 9, 0, 0, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 50)
 	elseif given == false then
 		ShowNotification("You are not wearing a vest.") -- ShowNotification or msg("message")
 	end
