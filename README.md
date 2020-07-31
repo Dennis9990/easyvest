@@ -28,7 +28,6 @@ ShowNotification("You put on your vest.")
 ```
 ### To Do
 - Possibility to add multiple vests.
-- 1 command to add/remove vest instead of 2 seperate.
 - Command usage Cooldown
 - Add hats, glasses and masks
 - Add statement for both genders.
