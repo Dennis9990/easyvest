@@ -13,7 +13,7 @@ I've added an animation to make it look pretty :D. Choose between a servernotifi
 - Add ``ensure easyvest`` to your server.cfg
 
 ### Edit Config
-- Armor ID. Change this however you want this to be.
+- Body Armor ID. Change this however you want this to be.
 ```
 SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)
 ```
