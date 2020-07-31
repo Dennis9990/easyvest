@@ -1,0 +1,2 @@
+# easyvest
+Simple /vest command
