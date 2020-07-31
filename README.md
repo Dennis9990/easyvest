@@ -14,7 +14,9 @@ I've added an animation to make it look pretty :D
 
 ### Edit Config
 - Armor ID. Change this however you want this to be.
-```SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)```
+```
+SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)
+```
 
 - To Update a skill you do following:
 ```lua
