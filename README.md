@@ -5,7 +5,7 @@ A simple script that gives you a vest when executing the /vest command. It will 
 I've added an animation to make it look more realistic.
 
 ### Functions
-- /vest puts on a vest.
+- /vest puts on a vest and reffils your armor bar to 100%.
 - /rvest removes the vest.
 
 ### Installation
