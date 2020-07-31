@@ -9,28 +9,28 @@ given = false
 RegisterNetEvent('vest')
 AddEventHandler('vest', function()
 	if given == false then
-    ShowNotification("Je hebt je vest aangetroken.")  -- ShowNotification or msg("message")
+    ShowNotification("You put on your vest.")  -- ShowNotification or msg("message")
 	TriggerEvent("EindBaas:vest") -- Trigger Animation.
 	Wait(1000)
     local ped = GetPlayerPed(PlayerId())
     SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0) -- Armor ID. Change this however you want this to be.
     SetPedArmour(GetPlayerPed(-1), 100)
 	elseif given == true then
-		ShowNotification("Je hebt al een vest aan.") -- ShowNotification or msg("message")
+		ShowNotification("You already have a vest on.") -- ShowNotification or msg("message")
 	end
 end)
 
 RegisterNetEvent('rvest')
 AddEventHandler('rvest', function()
 	if given == true then
-	ShowNotification("Je hebt je vest uitgetrokken.") -- ShowNotification or msg("message")
+	ShowNotification("You took your vest off.") -- ShowNotification or msg("message")
 	TriggerEvent("EindBaas:vest") -- Trigger Animation.
 	Wait(1000)
     local ped = GetPlayerPed(PlayerId())
     SetPedComponentVariation(GetPlayerPed(-1), 9, 0, 0, 0) -- Armor ID. Change this however you want this to be.
     SetPedArmour(GetPlayerPed(-1), 50)
 	elseif given == false then
-		ShowNotification("Je hebt geen vest aan.") -- ShowNotification or msg("message")
+		ShowNotification("You are not wearing a vest.") -- ShowNotification or msg("message")
 	end
 end)
 
@@ -87,5 +87,5 @@ function ShowNotification( text )
   end
   
   function msg(text)
-    TriggerEvent("chatMessage", "Armor", {255, 4, 1}, text) -- You can change "Armor" to whatever you want.
+    TriggerEvent("chatMessage", "EasyVest", {255, 4, 1}, text) -- You can change "Armor" to whatever you want.
 end
