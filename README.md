@@ -12,12 +12,10 @@ I've added an animation to make it look pretty :D
 - Download the resource and drop it to your resource folder.
 - Add ``ensure easyvest`` to your server.cfg
 
-### [ How do I use it? ]
-- To open the menu you trigger following:
+### Edit Config
+- Armor ID. Change this however you want this to be.
+```SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)```
 
-```lua
-    exports["gamz-skillsystem"]:SkillMenu()
-```
 - To Update a skill you do following:
 ```lua
     exports["gamz-skillsystem"]:UpdateSkill(skill, amount)
