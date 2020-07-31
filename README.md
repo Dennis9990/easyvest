@@ -6,7 +6,6 @@ I've added an animation to make it look more realistic.
 
 ### Functions
 - /vest puts on a vest and reffils your armor bar to 100%.
-- /rvest removes the vest.
 
 ### Installation
 - Download the resource and drop it to your resource folder.
