@@ -2,7 +2,7 @@
 
 ### What is this?
 A simple script that gives you a vest when executing the /vest command. It will remove the vest with /rvest.
-I've added an animation to make it look pretty :D
+I've added an animation to make it look pretty :D. Choose between a servernotification or a more simple chat msg.
 
 ### Functions
 - /vest puts on a vest.
