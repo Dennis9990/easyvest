@@ -1,12 +1,16 @@
 # Easy Vest
 
 ### What is this?
-A simple script that gives you a vest when executing the /vest command. Before giving you the vest it checks if your ped is male or female. I’ve added an animation to make it look more realistic.
+A simple script that gives you a body armor vest.
+
+You can choose between a light, medium, or heavy vest. A light vest will give you 25 armor, medium gives you 50 armor and heavy gives you 100 armor.
+Added a fancy animation to make it look more realistic. This script supports both male and female mp_freemode_01 peds.
 
 ### Functions
-- /vest puts on or removes a vest
-
-Putting a vest on refills your armor bar to 100%, Removing a vest drops it back to 50%
+- /vest light -- puts on a light vest.
+- /vest medium -- puts on a medium vest.
+- /vest heavy -- puts on a heavy vest.
+- /vest -- removes vest.
 
 ### Installation
 - Download the resource and drop it to your resource folder.
@@ -17,9 +21,9 @@ Putting a vest on refills your armor bar to 100%, Removing a vest drops it back 
 ```
 SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0)
 ```
--  Change messages. You can choose between server notifications or a more simple chat msg.
+- You can change the armor value of the vests to whatever you want.
 ```
-ShowNotification("You put on your vest.")
+SetPedArmour(GetPlayerPed(-1), 0)
 ```
 - Change these values in the Animation section to whatever animation you want. Full animation list https://wiki.gtanet.work/index.php?title=Animations
 ```
@@ -27,6 +31,5 @@ ShowNotification("You put on your vest.")
 --AnimName = drop_front
 ```
 ### To Do
-- Possibility to add multiple vests.
 - Command usage Cooldown
 - Add hats, glasses and masks
