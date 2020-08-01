@@ -75,7 +75,7 @@ function lightf() -- Light vest Gender female
     ShowNotification("You put on your vest.") 
     TriggerEvent("animation")
     Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 4, 0, 0) -- Armor ID. Change this however you want this to be.
+    SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 2, 0) -- Armor ID. Change this however you want this to be.
     SetPedArmour(GetPlayerPed(-1), 25)
     given = true
 end
