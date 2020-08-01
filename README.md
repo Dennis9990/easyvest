@@ -1,7 +1,7 @@
 # Easy Vest
 
 ### What is this?
-A simple script that gives you a vest when executing the /vest command. It will remove the vest with /rvest.
+A simple script that gives you a vest when executing the /vest command.
 I've added an animation to make it look more realistic.
 
 ### Functions
