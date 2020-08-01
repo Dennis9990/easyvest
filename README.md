@@ -4,6 +4,8 @@
 A simple script that gives you a vest when executing the /vest command.
 I've added an animation to make it look more realistic.
 
+### V1.1 uses a skinchanger native. Make sure to download and add skinchanger as well or easy vest won't work. 
+
 ### Functions
 - /vest puts on or removes a vest
 
