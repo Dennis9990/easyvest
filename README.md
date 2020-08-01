@@ -6,8 +6,7 @@ A simple script that gives you a vest when executing the /vest command. Before g
 ### Functions
 - /vest puts on or removes a vest
 
-Putting a vest on refills your armor bar to 100%
-Removing a vest drops it back to 50%
+Putting a vest on refills your armor bar to 100%, Removing a vest drops it back to 50%
 
 ### Installation
 - Download the resource and drop it to your resource folder.
