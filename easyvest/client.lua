@@ -8,14 +8,14 @@ local given = false -- Don't delete this
 
 RegisterNetEvent('vest')
 AddEventHandler('vest', function()
-    TriggerEvent('skinchanger:getSkin', function(skin)
-        GetPlayerPed(-1)
-        if skin.sex == 0 and given == false then -- If gender is male.
+    local maleSkin = GetHashKey("mp_m_freemode_01")
+    local femaleSkin = GetHashKey("mp_f_freemode_01")
+        if GetEntityModel(PlayerPedId()) == maleSkin and given == false then -- If gender is male.
             ShowNotification("You put on your vest.")
 	        TriggerEvent("animation")
             Wait(1000)
             givevestm(given)
-        elseif skin.sex == 1 and given == false then -- If gender is female.
+        elseif GetEntityModel(PlayerPedId()) == femaleSkin and given == false then -- If gender is female.
             ShowNotification("You put on your vest.") 
             TriggerEvent("animation")
             Wait(1000)
@@ -28,7 +28,6 @@ AddEventHandler('vest', function()
             SetPedArmour(GetPlayerPed(-1), 50)
             given = false
         end
-    end)
 end)
 
 ------------------------- Animation --------------------------------
@@ -68,7 +67,7 @@ function givevestm() -- Gender male
 end
 
 function givevestf() -- Gender female
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 1, 0) -- Armor ID. Change this however you want this to be.
+    SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 2, 0) -- Armor ID. Change this however you want this to be.
     SetPedArmour(GetPlayerPed(-1), 100)
     given = true
 end
