@@ -1,6 +1,6 @@
 --------------EasyVest--------------
 -------- Made By Dennis9990 --------
-----------------V1.1----------------
+----------------V1.3----------------
 
 local given = false -- Don't delete this
 local maleSkin = GetHashKey('mp_m_freemode_01') -- Don't delete this
