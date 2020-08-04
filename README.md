@@ -32,4 +32,3 @@ SetPedArmour(GetPlayerPed(-1), 0)
 ```
 ### To Do
 - Command usage Cooldown
-- Add hats, glasses and masks
