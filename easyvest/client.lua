@@ -1,12 +1,13 @@
 --------------EasyVest--------------
 -------- Made By Dennis9990 --------
-----------------V1.3----------------
+----------------V1.4----------------
 
 local given = false -- Don't delete this
 local maleSkin = GetHashKey('mp_m_freemode_01') -- Don't delete this
 local femaleSkin = GetHashKey('mp_f_freemode_01') -- Don't delete this
+local currentvest = nil -- Don't delete this
 
- ------------------------- Vests --------------------------------
+ ----------------------- Vests Event -----------------------------
 
 RegisterNetEvent('vest')
 AddEventHandler('vest', function(version)
@@ -16,24 +17,30 @@ AddEventHandler('vest', function(version)
     if version == nil and not given then
         msg("Use /vest light, medium or heavy.")
     end
-        if light and GetEntityModel(PlayerPedId()) == maleSkin and given == false then -- If gender is male and vest type is light.
-            lightm(given)
-        elseif medium and GetEntityModel(PlayerPedId()) == maleSkin and given == false then -- If gender is male and vest type is medium.
-            mediumm(given)
-        elseif heavy and GetEntityModel(PlayerPedId()) == maleSkin and given == false then -- If gender is male and vest type is heavy.
-            heavym(given)
-        elseif light and GetEntityModel(PlayerPedId()) == femaleSkin and given == false then -- If gender is female and vest type is light.
-            lightf(given)
-        elseif medium and GetEntityModel(PlayerPedId()) == femaleSkin and given == false then -- If gender is female and vest type is medium.
-            mediumf(given)
-        elseif heavy and GetEntityModel(PlayerPedId()) == femaleSkin and given == false then -- If gender is female and vest type is heavy.
-            heavyf(given)
-        elseif version == nil and given == true then -- If removing vest.
+        if light and not given then -- If vest type is light.
+            typelight(given)
+            elseif medium and currentvest == 'light'and given then
+                typemedium(given)
+            elseif heavy and currentvest == 'light' and given then
+                typeheavy(given)
+        elseif medium and not given then -- If vest type is medium.
+            typemedium(given)
+            elseif light and currentvest == 'medium' and given then
+                typelight(given)
+            elseif heavy and currentvest == 'medium' and given then
+                typeheavy(given)
+        elseif heavy and not given then -- If vest type is heavy.
+            typeheavy(given)
+            elseif light and currentvest == 'heavy' and given then
+                typelight(given)
+            elseif medium and currentvest == 'heavy' and given then
+                typemedium(given)
+        elseif version == nil and given then -- If removing vest.
             rvest(given)
         end
 end)
 
-------------------------- Animation --------------------------------
+----------------------- Animation Event ----------------------------
 
 RegisterNetEvent( 'animation' )
 AddEventHandler( 'animation', function()
@@ -62,62 +69,77 @@ end)
 
 ------------------------- Functions --------------------------------
 
-function lightm() -- Light vest Gender male
-    ShowNotification("You put on your vest.")
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 7, 2, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 25)
-    given = true
+function typelight() -- Light vest
+    male = GetEntityModel(PlayerPedId()) == maleSkin
+    female = GetEntityModel(PlayerPedId()) == femaleSkin
+    if male then -- if gender is male
+        ShowNotification("You put on your light vest.")
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 7, 2, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 25)
+        given = true
+        currentvest = 'light'
+    elseif female then -- if gender is female
+        ShowNotification("You put on your light vest.") 
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 2, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 25)
+        given = true
+        currentvest = 'light'
+    end
 end
 
-function lightf() -- Light vest Gender female
-    ShowNotification("You put on your vest.") 
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 2, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 25)
-    given = true
+
+function typemedium() -- Medium vest
+    male = GetEntityModel(PlayerPedId()) == maleSkin
+    female = GetEntityModel(PlayerPedId()) == femaleSkin
+    if male then -- if gender is male
+        ShowNotification("You put on your medium vest.")
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 7, 3, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 50)
+        given = true
+        currentvest = 'medium'
+    elseif female then --  if gender is female
+        ShowNotification("You put on your medium vest.") 
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 3, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 50)
+        given = true
+        currentvest = 'medium'
+    end
 end
 
-function mediumm() -- Medium vest Gender male
-    ShowNotification("You put on your vest.")
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 7, 3, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 50)
-    given = true
+
+function typeheavy() -- Heavy vest
+    male = GetEntityModel(PlayerPedId()) == maleSkin
+    female = GetEntityModel(PlayerPedId()) == femaleSkin
+    if male then --  if gender is male
+        ShowNotification("You put on your heavy vest.")
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 100)
+        given = true
+        currentvest = 'heavy'
+    elseif female then -- if gender is female
+        ShowNotification("You put on your heavy vest.") 
+        TriggerEvent("animation")
+        Wait(1000)
+        SetPedComponentVariation(GetPlayerPed(-1), 9, 4, 0, 0) -- Armor ID. Change this however you want this to be.
+        SetPedArmour(GetPlayerPed(-1), 100)
+        given = true
+        currentvest = 'heavy'
+    end
 end
 
-function mediumf() -- Medium vest Gender female
-    ShowNotification("You put on your vest.") 
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 6, 3, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 50)
-    given = true
-end
-
-function heavym() -- Heavy vest Gender male
-    ShowNotification("You put on your vest.")
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 3, 1, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 100)
-    given = true
-end
-
-function heavyf() -- Heavy vest Gender female
-    ShowNotification("You put on your vest.") 
-    TriggerEvent("animation")
-    Wait(1000)
-    SetPedComponentVariation(GetPlayerPed(-1), 9, 4, 0, 0) -- Armor ID. Change this however you want this to be.
-    SetPedArmour(GetPlayerPed(-1), 100)
-    given = true
-end
 
 function rvest() -- removes vest
-    ShowNotification("You took your vest off..")
+    ShowNotification("You took your vest off.")
     TriggerEvent("animation")
     Wait(1000)
     SetPedComponentVariation(GetPlayerPed(-1), 9, 0, 0, 0)
@@ -131,6 +153,7 @@ function ShowNotification( text )
     DrawNotification( false, false )
   end
   
+
   function msg(text)
     TriggerEvent("chatMessage", "EasyVest", {255, 4, 1}, text)
 end
